@@ -9,9 +9,36 @@
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
-		<div class="container">
-			<%= yield %>
-			<%= render 'layouts/footer' %>
+		<div class="full-width-div container">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="jumbotron">
+						<%= yield %>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="jumbotron">
+						<a class="twitter-timeline" 
+						   href="https://twitter.com/admisionMAC" 
+						   data-widget-id="659112168709865473"
+						   data-tweet-limit="5"
+						   data-chrome="nofooter noheader noborder"
+						   data-screen-name="admisionMAC"
+						   data-theme="light"
+						   data-border-color="#000000"> Tweets @admisionMAC
+						</a>
+						<script>
+							!function(d,s,id)
+							{var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+								if(!d.getElementById(id)){js=d.createElement(s);
+									js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js,fjs);}
+								}
+								(document,"script","twitter-wjs");
+						</script>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

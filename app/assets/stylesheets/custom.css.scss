@@ -16,6 +16,7 @@ $gray-medium-light: #eaeaea;
 	background: black;
 	color: white;
 	padding-top: 10px;
+	padding-right: 50px;
 	padding-bottom: 45px;
 	margin-bottom: -30px;
 	text-align: center;
@@ -23,11 +24,18 @@ $gray-medium-light: #eaeaea;
 
 .navbar {
 	border: 0px;
-	margin-top: 0px;
+	margin-top: 10px;
+	padding-right: 200px;
+	background: black;
+}
+
+.navbar .nav > li > a {
+	color: white;
 }
 
 body {
 	padding-top: 0px;
+	background: $gray-medium-light;
 }
 
 section {
@@ -42,6 +50,32 @@ textarea {
 	text-align: center;
 	h1 {
 		margin-bottom: 0px;
+	}
+}
+
+.full-width-div {
+	position: absolute;
+	width: 100%;
+}
+
+
+.col-lg-9 {
+	margin-left: -14px;
+	.jumbotron {
+		color: white;
+		background-color: black;
+		margin-top: -19px;	
+	}
+}
+
+.col-lg-3 {
+	margin-top: -19px;
+	width:350px;
+	.jumbotron {
+		width: 366px;
+		margin-left:-29px;
+		color: white;
+		background-color: black;	
 	}
 }
 
@@ -64,7 +98,7 @@ h2 {
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: normal;
-	color: $gray-light;
+	color: white;
 }
 
 p {
@@ -78,13 +112,8 @@ p {
 	float: left;
 	width: 7%;
 	height: 7%;
+	margin-left: 20px;
 }
-
-/*#logo {
-	float: left;
-	width: 10px;
-	height: 10px;
-}*/
 
 /* footer */
 
