@@ -10,11 +10,17 @@
 	<div class="container">
 		<nav>
 			<ul class="nav navbar-nav">
-				<li><%= link_to "Home",	  root_path %></li>
-				<li><%= link_to "Agrupación",   '#' %></li>
-				<li><%= link_to "Preparadores", '#' %></li>
-				<li><%= link_to "Admisión", '#' %></li>
-				<li><%= link_to "Reserva", '#' %></li>
+				<li><%= link_to "Inicio",	  	root_path %></li>
+				<li><%= link_to "Agrupación",   agrupacion_path %></li>
+				<li><%= link_to "Servicios" , 	servicios_path%></li>
+				<li><%= link_to "Preparadores", preparadores_path %></li>
+				<li><%= link_to "Admisión", 	admision_path %></li>
+				<li><%= link_to "Reserva", 		'#' %></li>
+				<li><%= link_to "Wiki",			'#' %></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "Iniciar Sesión", '#' %></li>
 			</ul>
 		</nav>
 	</div>

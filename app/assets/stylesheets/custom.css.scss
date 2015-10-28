@@ -10,7 +10,7 @@ $gray-medium-light: #eaeaea;
 	box-sizing: border-box;
 }*/
 
-/* universal */
+/* Header Layout */
 .page-header {
 	margin-top: 0px;
 	background: black;
@@ -20,6 +20,12 @@ $gray-medium-light: #eaeaea;
 	padding-bottom: 45px;
 	margin-bottom: -30px;
 	text-align: center;
+	.img-responsive {
+		float: left;
+		width: 7%;
+		height: 7%;
+		margin-left: 20px;
+	}
 }
 
 .navbar {
@@ -33,9 +39,11 @@ $gray-medium-light: #eaeaea;
 	color: white;
 }
 
+
+/* App Layout */
 body {
 	padding-top: 0px;
-	background: $gray-medium-light;
+	background: white;
 }
 
 section {
@@ -54,28 +62,58 @@ textarea {
 }
 
 .full-width-div {
-	position: absolute;
-	width: 100%;
-}
+		position: absolute;
+		width: 100%;
+	/* Contenido de las paginas */
+	.col-lg-9 {
+		margin-left: -14px;
+		.jumbotron {
+			color: white;
+/*			background-color: black;*/
+			background: url(http://i.imgur.com/BmT8aBH.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			margin-top: -19px;
 
+			.row {
+				margin-top: 30px;
+				margin-bottom: 30px;
+			}
 
-.col-lg-9 {
-	margin-left: -14px;
-	.jumbotron {
-		color: white;
-		background-color: black;
-		margin-top: -19px;	
+			.center {
+				margin-top: 120px;
+				margin-bottom: 30px;
+			}
+
+			.img-responsive {
+				width: 20%;
+				height: 20%;
+				margin-left: 350px;
+			}
+
+			h2 {
+				font-size: 1.2em;
+				letter-spacing: -1px;
+				margin-bottom: 30px;
+				text-align: center;
+				font-weight: normal;
+				color: white;
+			}
+		}
 	}
-}
 
-.col-lg-3 {
-	margin-top: -19px;
-	width:350px;
-	.jumbotron {
-		width: 366px;
-		margin-left:-29px;
-		color: white;
-		background-color: black;	
+	/* Twitter Tracker */
+	.col-lg-3 {
+		margin-top: -19px;
+		width:350px;
+		.jumbotron {
+			width: 366px;
+			margin-left:-29px;
+			color: white;
+			/*background-color: black;*/	
+			background: url(http://i.imgur.com/W7RDsb8.png);
+			background-size: 100%;
+		}
 	}
 }
 
@@ -92,32 +130,23 @@ h1 {
 	text-align: center;
 }
 
-h2 {
+/*h2 {
 	font-size: 1.2em;
 	letter-spacing: -1px;
 	margin-bottom: 30px;
 	text-align: center;
 	font-weight: normal;
 	color: white;
-}
+}*/
 
 p {
 	font-size: 1.1em;
 	line-height: 1.7em;
 }
 
-/* header */
-
-.img-responsive {
-	float: left;
-	width: 7%;
-	height: 7%;
-	margin-left: 20px;
-}
 
 /* footer */
-
-footer {
+/*footer {
 	margin-top: 45px;
 	padding-top: 5px;
 	border-top: 1px solid #eaeaea;
@@ -142,4 +171,4 @@ footer {
 			margin-left: 15px;
 		}
 	}
-}
+}*/
