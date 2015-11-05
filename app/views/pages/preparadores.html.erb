@@ -3,62 +3,19 @@
 	Preparadores
 </h1>
 
-<!-- Esto se hara con ruby y un ciclo despues
-	 Cuando tengamos BD -->
-<div class="center row">
-	<div class="col-lg-12">
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep1 </div>
-		</div>
 
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep2 </div>
-		</div>
-
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep3 </div>
-		</div>
+<% (0..@filas-1).each do |i| %>
+	<div class="center row">
+		<% (0..2).each do |j| %>
+			<% if @preparadores[j+(3*i)].present? %>
+				<div class="col-lg-4">
+					<div> 
+						<img src=<%= @preparadores[j+(3*i)].avatar %> alt="PrepAv" class="img-responsive"> 
+					</div>
+					<div> <%= @preparadores[j+(3*i)].name %> </div>
+					<div> <%= @preparadores[j+(3*i)].email %></div>
+				</div>
+			<% end %>
+		<% end %>
 	</div>
-</div>
-
-<div class="center row">
-	<div class="col-lg-12">
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep4 </div>
-		</div>
-
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep5 </div>
-		</div>
-
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep6 </div>
-		</div>
-	</div>
-</div>
-
-<div class="center row">
-	<div class="col-lg-12">
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep7 </div>
-		</div>
-
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep8 </div>
-		</div>
-
-		<div class="col-lg-4">
-			<div> [Foto] </div>
-			<div> Prep9 </div>
-		</div>
-	</div>
-
-</div>
+<% end %>

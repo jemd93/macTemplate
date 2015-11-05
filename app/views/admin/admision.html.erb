@@ -1,0 +1,43 @@
+<% provide(:title, 'Admision') %>
+<h1> Admision </h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="table-responsive">
+			<table class="table serv_table">
+				<tr>
+					<th> Nombre </th> <th> Info </th>
+				</tr>
+				<% @posts.each do |post| %>
+					<tr>
+						<td><%= post.name %></td>
+						<td><%= post.info %></td>
+						<td><%= button_to "Eliminar", 
+								{controller: "admin", 
+								action: "eliminar_post", 
+								id: post.id, 
+								method: :put},
+								{:class => "btn btn-sm"} %>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>	
+</div>
+
+<h1>Agregar Post</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for @post, 
+			url: {controller: "admin", action: "crear_post" } do |f| %>
+			<%= render 'shared/post_error_messages' %>
+
+			<%= f.label :name, "Nombre" %>
+			<%= f.text_field :name, class: 'form-control' %>
+
+			<%= f.label :info, "Descripcion" %>
+			<%= f.text_field :info, class: 'form-control' %>
+
+			<%= f.submit "Agregar Post", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>

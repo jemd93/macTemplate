@@ -4,8 +4,12 @@
 </h1>
 
 <h2>
-	<div> Pagina de Servicios del MAC </div>
-	<div class="row"> 
-		[Info de los Servicios] 
-	</div>
+	<% @servicios.each do |servicio| %>
+		<div class="panel panel-default"> 
+			<div class="panel-heading"><%= servicio.name %></div>
+			<div class="panel-body">
+				<%= servicio.info %>
+			</div>
+		</div>
+	<% end %>
 </h2>

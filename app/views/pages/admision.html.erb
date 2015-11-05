@@ -4,15 +4,12 @@
 </h1>
 
 <h2>
-	<div class="row postrow">
-		Post1
-	</div>
-
-	<div class="row postrow">
-		Post2
-	</div>
-
-	<div class="row postrow">
-		Post3
-	</div>
+	<% @posts.each do |post| %>
+		<div class="panel panel-default"> 
+			<div class="panel-heading"><%= post.name %></div>
+			<div class="panel-body">
+				<%= post.info %>
+			</div>
+		</div>
+	<% end %>
 </h2>

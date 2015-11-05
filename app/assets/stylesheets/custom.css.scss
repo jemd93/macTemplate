@@ -3,6 +3,8 @@
 
 /* mixins, variables, etc */
 $gray-medium-light: #eaeaea;
+$azul: #123d6b;
+$azulOsc: #123;
 
 @mixin box_sizing {
 	-moz-box-sizing: border-box;
@@ -119,6 +121,36 @@ textarea {
 	}
 }
 
+.col-lg-4 {
+	.img-responsive {
+		width: 100px;
+		height: 100px;
+		margin-left: 84px;
+		margin-top: -75px;
+		margin-bottom: 10px;
+	}
+}
+
+.panel, .panel-default > .panel-heading {
+	background-color: black;
+	border-color: white;
+	color: white;
+	text-align: left;
+}
+
+.panel-default > .panel-heading {
+	background-color: $azul;
+	/*background-color: #224299;*/
+	/*background-color: #0E558D;*/
+	/*background-color: #1A6093;*/
+}
+
+
+/*.panel-heading, .panel-default {
+	background-color: black;
+	border-color: white;
+	color: white;
+}*/
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
@@ -160,11 +192,41 @@ input {
 	color: black;
 }
 
+#error_explanation {
+	color: red;
+	ul {
+		color: red;
+		margin: 0 0 30px 0;
+	}
+}
+
+.field_with_errors {
+	@extend .has-error;
+	.form-control {
+		color: $state-danger-text;
+	}
+}
+
 table {
 	border: 1px solid white;
 	table-layout: fixed;
+	.btn {
+		width: 100px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}
+
+/* Tabla de preparadores */
+.prep_table {
 	width: 300px;
 	margin-left: -100px;
+}
+
+/* Tabla deservicios */
+.serv_table {
+	width: 300px;
+	margin-left: -5px;
 }
 
 th, td {
@@ -173,15 +235,16 @@ th, td {
 	text-align: center;
 
 	img {
-		height: 50%;
-		width: 50%;
-		margin-left:45px;
+		height: 50px;
+		width: 50px;
+		margin-left:70px;
 	}
+
 }
 
 /* boton */
 .btn {
-	background-color: $gray-darker;
+	background-color: $azul;
 	border-color: white;
 	color: white;
 
@@ -189,21 +252,27 @@ th, td {
 
 /* mouse over del boton */
 .btn:hover {
-	background-color: black;
+	background-color: $azulOsc;
 	border-color: white;
+	color: white;
 }
 
-
+.btn:focus, .btn-active {
+	background-color: $azulOsc;
+	border-color: white;
+	color: white;
+}
 
 /* footer */
-/*footer {
-	margin-top: 45px;
+footer {
+	margin-top: 10px;
 	padding-top: 5px;
-	border-top: 1px solid #eaeaea;
-	color: $gray;
+	margin-left: 30px;
+	margin-right: 30px;
+	border-top: 2px solid black;
 	a {
-		color: $gray;
 
+		color: black;
 		&:hover {
 			color: $gray-darker;
 		}
@@ -221,4 +290,4 @@ th, td {
 			margin-left: 15px;
 		}
 	}
-}*/
+}
