@@ -1,18 +1,30 @@
 class AdminController < ApplicationController
 
-  def login
+  def home
+    if logged_in?
+    else 
+      redirect_to '/admin'
+    end
   end
 
   # Area de preparadores
   def preparadores
-  	@preparadores = Preparador.all
-  	@preparador = Preparador.new
+    if logged_in?
+    	@preparadores = Preparador.all
+    	@preparador = Preparador.new
+    else 
+      redirect_to '/admin'
+    end
   end
 
   def crear_preparador
   	@preparador = Preparador.new(preparador_params)
-    @preparador.save
-    redirect_to '/admin/preparadores'
+    if @preparador.save
+      redirect_to '/admin/preparadores'
+    else 
+      @preparadores = Preparador.all
+      render '/admin/preparadores'
+    end
   end
 
   def eliminar_preparador
@@ -23,14 +35,22 @@ class AdminController < ApplicationController
 
   # Area de servicios
   def servicios
-    @servicios = Servicio.all
-    @servicio = Servicio.new
+    if logged_in?
+      @servicios = Servicio.all
+      @servicio = Servicio.new
+    else 
+      redirect_to '/admin'
+    end
   end
 
   def crear_servicio
     @servicio = Servicio.new(servicio_params)
-    @servicio.save
-    redirect_to '/admin/servicios'
+    if @servicio.save
+      redirect_to '/admin/servicios'
+    else 
+      @servicios = Servicio.all
+      render '/admin/servicios'
+    end
   end
 
   def eliminar_servicio
@@ -41,14 +61,22 @@ class AdminController < ApplicationController
 
   # Admision
   def admision
-    @posts = Post.all 
-    @post = Post.new
+    if logged_in?
+      @posts = Post.all 
+      @post = Post.new
+    else 
+      redirect_to '/admin'
+    end
   end
 
   def crear_post
     @post = Post.new(post_params)
-    @post.save
-    redirect_to '/admin/admision'
+    if @post.save
+      redirect_to '/admin/admision'
+    else 
+      @posts = Post.all
+      render '/admin/admision'
+    end
   end
 
   def eliminar_post

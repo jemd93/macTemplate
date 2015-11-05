@@ -17,5 +17,15 @@
 				<li><%= link_to "Admisión", 	admision_path %></li>
 			</ul>
 		</nav>
+		<% if logged_in? %>
+			<nav>
+				<ul class="nav navbar-nav navbar-admin">
+					<li><%= link_to "Admin", '/admin/home' %></li>
+					<li><%= link_to "Servicios", '/admin/servicios' %></li>
+					<li><%= link_to "Preparadores", '/admin/preparadores' %></li>
+					<li><%= link_to "Admisión", '/admin/admision' %></li>
+				</ul>
+			</nav>
+		<% end %>
 	</div>
 </div>

@@ -41,6 +41,14 @@ $azulOsc: #123;
 	color: white;
 }
 
+.navbar-admin {
+	padding-left: 325px;
+}
+
+.navbar-admin > li > a{
+	color: $azul;
+}
+
 
 /* App Layout */
 body {

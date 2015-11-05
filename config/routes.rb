@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'posts/new'
 
   # Paginas publicas
@@ -11,6 +13,12 @@ Rails.application.routes.draw do
 
   # Admin
   get 'admin'                => 'admin#login'
+  get 'admin/home'           => 'admin#home'
+  
+  # Sessions 
+  get 'admin/login'                => 'sessions#new'
+  post 'admin/login'               => 'sessions#create'
+  delete 'admin/logout'            => 'sessions#destroy'
 
   # Preparadores
   get 'admin/preparadores'   => 'admin#preparadores'
@@ -27,5 +35,5 @@ Rails.application.routes.draw do
   match "admin/crear_post",        :to => "admin#crear_post",    via: [:get,:post]
   match "admin/eliminar_post/:id", :to => "admin#eliminar_post", via: [:put,:post,:get]
 
-  resources :preparadors, :servicios, :posts
+  resources :users, :preparadors, :servicios, :posts
 end
